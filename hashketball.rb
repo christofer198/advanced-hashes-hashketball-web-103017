@@ -124,7 +124,7 @@ def num_points_scored(player_name)
 
  game_hash.each do |location, team_data|
    if team_data[:players].include?(player_name) == true
-     player_points = team_data[:players][player_name][:points]
+    player_points = team_data[:players][player_name][:points]
    end
  end
 
