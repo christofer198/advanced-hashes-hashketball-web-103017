@@ -120,12 +120,15 @@ def game_hash
 end
 
 def num_points_scored(player_name)
+ player_points = 0
 
-  game_hash.each do |key, value|
-    if game_hash[key][:players].include?(player_name) == true
-      return game_hash[key][:players][player_name][:points]
-    end
-  end
+ game_hash.each do |location, team_data|
+   if team_data[:players].inlcude?(player_name) == true
+     player_points = team_data[:players][player_name][:points]
+   end
+ end
+
+ player_points
 end
 
 def shoe_size(player_name)
